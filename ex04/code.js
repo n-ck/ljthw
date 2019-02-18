@@ -1,3 +1,4 @@
+// let is the best way to make a variable
 let name = 'Zed A. Shaw';
 let age = 43;
 let height = 74;
