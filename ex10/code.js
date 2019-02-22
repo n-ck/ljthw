@@ -1,18 +1,8 @@
-// https://nodejs.org/api/fs.html
+const fs = require('fs');
 
-const fs = require("fs");
+let file_to_open = process.argv[2];
+let file_contents = fs.readFileSync(file_to_open);
 
-let contents = fs.readFileSync("test.txt");
-
-console.log("Contents:");
-console.log(contents.toString());
-
-// using a callback
-
-console.log("-----------")
-
-fs.readFile("test.txt", (err, data) => {
-	console.log(err.toString());
-	console.log(data.toString());
-});
+console.log(`The file named ${file_to_open} contains:`);
+console.log(file_contents.toString());
 

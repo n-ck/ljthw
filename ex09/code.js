@@ -1,9 +1,18 @@
-let name = process.argv[2];
-let age = process.argv[3];
-let eyes = process.argv[4];
+// https://nodejs.org/api/fs.html
 
-console.log(`Your name is ${name}`);
-console.log(`Your age is ${age}`);
-console.log(`Your eyes are ${eyes}`);
+const fs = require("fs");
 
-console.log(process.argv);
+let contents = fs.readFileSync("test.txt");
+
+console.log("Contents:");
+console.log(contents.toString());
+
+// using a callback
+
+console.log("-----------")
+
+fs.readFile("test.txt", (err, data) => {
+	console.log(err.toString());
+	console.log(data.toString());
+});
+
