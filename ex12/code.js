@@ -18,3 +18,16 @@ fs.readFile("test.txt", (err, data) => {
 	print_lines(err, yelling);
 });
 
+// Creating more callback functions:
+
+const filecontent = 'this is the new file\'s content'
+fs.writeFile('secondfile.txt', filecontent, (err) => {
+	console.log('saved new file with content')
+});
+
+const newfile = (filename, data, err) => {
+	return fs.writeFile(filename, data, (err));
+	console.log('saved new file');
+}
+
+newfile('thirdfile.txt', filecontent);
