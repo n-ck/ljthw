@@ -18,16 +18,20 @@ fs.readFile("test.txt", (err, data) => {
 	print_lines(err, yelling);
 });
 
-// Creating more callback functions:
+
+/* --- Creating more callback functions --- */
+
+// add an argument with filename for the last function
+let thirdfile = process.argv[2]
 
 const filecontent = 'this is the new file\'s content'
 fs.writeFile('secondfile.txt', filecontent, (err) => {
-	console.log('saved new file with content')
+	console.log('saved second file with content')
 });
 
 const newfile = (filename, data, err) => {
+	console.log('saved third file');
 	return fs.writeFile(filename, data, (err));
-	console.log('saved new file');
-}
+	}
 
-newfile('thirdfile.txt', filecontent);
+newfile(thirdfile, filecontent);
