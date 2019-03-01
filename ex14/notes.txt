@@ -1,0 +1,22 @@
+Comparison operators:
+
+==		equal
+===		strict equal
+
+!=		not equal to
+!==		strict not equal to
+
+>		greater than
+<		less than
+<=		greater than or equal to
+>=		less than or equal to
+
+
+Logical operators
+&& 		and
+||		or
+!		not
+
+
+Javascript Expressions and Operators:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators
