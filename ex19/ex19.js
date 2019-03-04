@@ -5,11 +5,19 @@ exports.fruit = [
 	{kind: 'Grapes', count: 14, rating: 'UR'}
 ];
 
-/*
+
 exports.cars = [
 	{type: 'Cadillac', color: 'Black', size: 'Big', miles: 34500},
 	{type: 'Corvette', color: 'Red', size: 'Little', miles: 1000000},
     {type: 'Ford', color: 'Blue', size: 'Medium', miles: 1234},
     {type: 'BMW', color: 'White', size: 'Baby', miles: 7890}
 ];
-*/
+
+
+exports.languages = [
+    {name: 'Python', speed: 'Slow', opinion: ['Terrible', 'Mush']},
+    {name: 'JavaScript', speed: 'Moderate', opinion: ['Alright', 'Bizarre']},
+    {name: 'Perl6', speed: 'Moderate', opinion: ['Fun', 'Weird']},
+    {name: 'C', speed: 'Fast', opinion: ['Annoying', 'Dangerous']},
+    {name: 'Forth', speed: 'Fast', opinion: ['Fun', 'Difficult']},
+];
