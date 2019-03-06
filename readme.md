@@ -2,6 +2,17 @@
 
 Exercises from Learn Javascript The Hard Way
 
+### Variables
+
+```
+var //
+const //
+let //
+```
+
+### Arrays
+
+
 
 ### Objects (key value pairs)
 
@@ -28,3 +39,20 @@ for(key in fruit) {
   console.log(`${key}=${fruit[key]}`);
 }
 ```
+
+### Functions
+
+```
+const name = (parameter) => {
+	console.log(parameter);
+}
+```
+
+or
+
+```
+function name(parameter) {
+	consol.log(parameter);
+}
+```
+
