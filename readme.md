@@ -10,9 +10,40 @@ const //
 let //
 ```
 
+### If-Statements
+
+
 ### Arrays
 
+```
+let fruit = ["apples", "oranges", "grapes"];
 
+fruit[0] // apples
+
+fruit.length // count of elements in array
+
+```
+
+```
+let i = 0;
+while(i < fruit.length) {
+	console.log(`while ${i}=${pigments[i]}`);
+	i ++;
+}
+
+or
+
+for(let i = 0; i < fruit.length; i++) {
+	console.log(`for ${i}=${fruit[i]}`);
+}
+
+or 
+
+for(product in fruits) {
+	console.log(`for-in ${paint}`);
+}	
+
+```
 
 ### Objects (key value pairs)
 
