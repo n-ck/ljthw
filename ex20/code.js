@@ -5,7 +5,9 @@ const say = (prompt) => {
 }
 
 const die = (message) => {
+	let hp = 0;
 	say(message);
+	console.log(hp);
 	process.exit(1);
 }
 
@@ -21,15 +23,35 @@ const ask = (hp, prompt) => {
 const door = (hp) => {
 	// they have to open the door to get the gold
 	// what kind of puzzle will they solve?
+	say("You arrived at the door to the gold room");
+	let next = ask(hp, "What came first the chicken or the egg?");
+	
+	if(next === "chicken") {
+		say("That's correct!");
+		gold(hp);
+	} else {
+		die("You're dead!");
+		let hp = 0;
+	}
+	
 }
 
 const spider = (hp) => {
 	// the spider takes 10 hit points
 	// if they live then they can run away
+	if(hp => 10) {
+		say("The spider bites you and takes 10 hit points");
+		console.log(`[[You now have ${hp} hit points]]`);
+		say("Run away to the other door");
+		door(hp);
+	} else {
+		die("The spider bites you and you don't have enough hit points to survive");
+	}
 }
 
 const gold = (hp) => {
 	// end of the game they win if they get the gold
+	say("You found the gold, congrats!");
 }
 
 const rope = (hp, action) => {
