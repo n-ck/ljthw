@@ -2,15 +2,59 @@
 
 Exercises from Learn Javascript The Hard Way
 
+### Comments
+```
+// single line comment
+
+/*
+Multiple
+Line
+Comment
+*/
+```
+
+### Operators
+
+Comparison operators:
+
+```
+==		equal
+===		strict equal
+
+!=		not equal to
+!==		strict not equal to
+
+>		greater than
+<		less than
+<=		greater than or equal to
+>=		less than or equal to
+```
+
+```
+Logical operators
+&& 		and
+||		or
+!		not
+```
+
 ### Variables
 
 ```
 var //
-const //
-let //
+const // should be the same value all the time
+let // variable where the value can change later
 ```
 
 ### If-Statements
+
+```
+if (x === 10) {
+	// first jump
+} else if (x < 10) {
+	// second jump
+} else {
+	// last jump
+}
 
 
 ### Arrays
@@ -73,17 +117,53 @@ for(key in fruit) {
 
 ### Functions
 
+New ES6 style:
+
 ```
 const name = (parameter) => {
 	console.log(parameter);
 }
 ```
 
-or
+or older style:
 
 ```
 function name(parameter) {
 	consol.log(parameter);
 }
 ```
+
+### Modules
+
+Module exports: to register functions
+key: name of function
+value: actual function created
+
+```
+module.exports = {
+	key: value	
+}
+```
+
+require code (i.e. include code.js):
+
+```
+require('./code');
+```
+
+### Including variable in string
+
+```
+console.log(`Use backquotes and this ${this}variable notation`);
+```
+
+### Node's built-in file functions
+https://nodejs.org/api/fs.html
+
+### Command-line arguments
+process.argv
+
+### Prompting input
+readline-sync // needs to be installed with npm
+
 
