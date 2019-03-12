@@ -133,6 +133,39 @@ function name(parameter) {
 }
 ```
 
+### Classes
+
+```
+const Person {
+	constructor (name, age, eyes) {
+		this.name = name;
+		this.age = age;
+		this.eyes = eyes;
+	}
+
+	talk(words) {
+		console.log{`I am ${this.name} and ${words}.`});
+	}
+}
+
+let frank = new Person("Frank, 34, "blue");
+frank.talk("I am talking here!");
+console.log(`Frank is ${frank.age}`);
+
+```
+
+#### Class Inheritance
+
+```
+class Hair extends Person {
+	constructor (name, age, eyes) {
+		super(name, age, eyes)
+		this.color = "blond";
+		this.length = "medium";
+	}
+}
+```
+
 ### Modules
 
 Module exports: to register functions

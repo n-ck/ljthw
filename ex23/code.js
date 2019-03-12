@@ -32,6 +32,10 @@ class BassVI extends Jazzmaster {
     }
 }
 
+class Acoustic extends Guitar {
+
+}
+
 class Person {
     constructor (name, age, eyes) {
         this.name = name;
@@ -55,6 +59,11 @@ let babbington = new Musician("Roy Babbington", 78);
 let harris = new Musician("Jet Harris", 71);
 let taliesin = new BassVI("red", "Taliesin");
 let golden = new BassVI("gold", "Golden Arm");
+let newjazzmaster = new Jazzmaster("red", "Red", "blabla");
+let acoustic = new Acoustic("light", "Spanish", "cedar");
 
 babbington.play(taliesin, ['a', 'b', 'c', 'd']);
 harris.play(golden, ['a', 'b', 'c', 'd']);
+newjazzmaster.play(['x', 'y', 'z']);
+acoustic.play("acoustic note");
+
