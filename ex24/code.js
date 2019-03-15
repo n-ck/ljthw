@@ -3,6 +3,7 @@ const readline = require('readline-sync');
 class Game {
     constructor () {
         this.hp = Math.floor(Math.random() * 20) + 1;
+        this.rooms = {}
     }
 
     say(prompt) {
@@ -23,13 +24,20 @@ class Game {
         }
     }
 
-    addRoom(room) {
-        this[room.name] = room;
-        room.game = this;
+    buildMaps(rooms) {
+        for(let room of rooms) {
+            this.rooms[room.name] = room;
+            room.game = this;
+        }
+    }
+
+    go(where) {
+        let room = this.rooms[where];
+        room.enter();
     }
 
     play(name) {
-        this[name].enter();
+        this.go(name);
     }
 
     hit(amount) {
@@ -57,10 +65,10 @@ class Door extends Room {
 
         if(next === "footsteps") {
             this.game.say("Very well done!");
-            this.game.gold.enter();
+            this.game.go("gold");
         } else {
             this.game.say("Hmm try again!");
-            this.game.door.enter();
+            this.game.go("door");
         }
     }
 }
@@ -74,7 +82,7 @@ class Spider extends Room {
             this.game.hp -= 10;
             console.log("The spider takes 10 hit points");
             console.log(`[[You have ${this.game.hp} hit points.]]`)
-            this.game.door.enter()
+            this.game.go("door");
         } else {
             this.game.die("The spider takes 10HP, You're dead!");
         }
@@ -98,9 +106,9 @@ class Rope extends Room {
         let next = this.game.ask("Left or right:");
 
         if(next === "left") {
-            this.game.door.enter()
+            this.game.go("door");
         } else if(next === "right") {
-            this.game.spider.enter()
+            this.game.go("spider");
         } else {
 
         }
@@ -116,22 +124,25 @@ class Well extends Room {
 
         if(next === "climb") {
             this.game.say("You climb down the rope.");
-            this.game.rope.enter();
+            this.game.go("rope");
         } else if(next === "jump") {
             this.game.say("Yikes! Let's see if you can survive!");
             this.game.hit(5);
-            this.game.rope.enter();
+            this.game.go("rope");
         } else {
             this.game.say("You can't do that here.");
-            this.game.well.enter();
+            this.game.go("well");
         }
     }
 }
 
 let game = new Game();
-game.addRoom(new Well("well"));
-game.addRoom(new Rope("rope"));
-game.addRoom(new Gold("gold"));
-game.addRoom(new Spider("spider"));
-game.addRoom(new Door("door"));
+let rooms = [
+    new Well("well"),
+    new Rope("rope"), 
+    new Gold("gold"),
+    new Spider("spider"),
+    new Door("door"),
+]
+game.buildMaps(rooms);
 game.play("well");
