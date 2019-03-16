@@ -11,7 +11,7 @@ class Game {
     }
 
     die(message) {
-        this.say(message);
+        this.say(`!!!!!!!!!!\n${message}`);
         process.exit(1);
     }
 
@@ -42,6 +42,9 @@ class Game {
 
     hit(amount) {
         this.hp -= amount;
+        if(this.hip <= 0) {
+            this.die("You died from internal injuries.");
+        }
     }
 }
 
@@ -59,16 +62,32 @@ class Door extends Room {
     enter() {
         // they have to open the door to get the gold
         // what kind of puzzle will they solve?
-        this.game.say("You're one step closer to the gold...");
-        this.game.say("The door opens if you solve this riddle:");
-        let next = this.game.ask("The more you take, the more you leave behind. What am I?");
 
-        if(next === "footsteps") {
-            this.game.say("Very well done!");
-            this.game.go("gold");
-        } else {
-            this.game.say("Hmm try again!");
-            this.game.go("door");
+        let attempt = 0;
+
+        while(attempt <= 3) {
+
+            let remaining_attempts = 4 - attempt;
+
+            if(attempt > 0) {
+                this.game.say(`you have ${remaining_attempts} attempts left`);
+            } else {
+                this.game.say("You're one step closer to the gold...");
+                this.game.say("The door opens if you solve this riddle:");
+            }
+
+            let next = this.game.ask("The more you take, the more you leave behind. What am I?");
+
+            if(next === "footsteps") {
+                this.game.say("Very well done!");
+                this.game.go("gold");
+            } else if(attempt < 3) {
+                this.game.say("Hmm try again!");
+                // this.game.go("door");
+                attempt++;
+            } else {
+                this.game.die("Too bad, you couldn't solve the riddle!"); 
+            }
         }
     }
 }
