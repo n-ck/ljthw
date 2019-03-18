@@ -200,3 +200,10 @@ process.argv
 readline-sync // needs to be installed with npm
 
 
+### Transforming data
+
+map -- Apply a calculation on each element
+reduce -- Turn a sequence into a final calculation
+find -- Search for an element in a sequence
+filter -- Filter out selected elements from a sequence
+forEach -- Just loop over a sequence without a result
