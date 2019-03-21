@@ -17,10 +17,6 @@ const name_age = (pet) => {
     return `${pet[0]} is ${pet[1]}`;
 }
 
-console.log(young_pets);
-console.log(age_pets);
-console.log(name_age);
-
 const debug = (msg) => {
     console.log(msg);
     // why am I doing this here?
