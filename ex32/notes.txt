@@ -1,0 +1,35 @@
+The Process:
+
+1. Make a ToDo list:
+- Make a list of things you need to do for that day
+- They should be short and to the point
+- Listing the as steps the software needs to follow works very well
+- Or: random ideas and brainstorming
+- Be sure to throw out things you don't really need to do
+
+2. Pick 1 ToDO and a .JS file
+- Choose the easiest and obvious task to do
+- Create or open the code files you need
+- It sounds dumb, but just doing that is hard enough for some people
+- If you want to code a task, you need a file
+
+3. Write out descriptive comments
+- Think "In order for code.js to do 'Task 1' this code must do..."
+
+4. Convert the descriptive comments to pseudo-code
+- Also called p-code
+- It's basically loose quick to write kind of code comment for what needs to happen
+
+5. Convert the p-code to JS
+- You then go through each p-code comment and write the JavaScript under it, run it, and test that it works
+- Repeat this until you have the JS file all filled in 
+
+Exercise: Cat to-do list:
+1. Get files from command line
+2. Open the files
+3. Print the files out
+4. Print errors if the files don't exist
+5. Open a file (cat.js or code.js)
+6. Run the file, to make sure you can run it
+7. 
+
