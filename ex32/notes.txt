@@ -1,5 +1,15 @@
 The Process:
 
+1. Make a ToDo list
+2. Pick one ToDo and a code file
+3. Write out descriptive comments
+4. Convert the descriptive comments to pseudo code
+5. Convert the p-code to real code
+6. Test the code
+7. Clean up the p-code
+8. Repeat
+
+
 1. Make a ToDo list:
 - Make a list of things you need to do for that day
 - They should be short and to the point

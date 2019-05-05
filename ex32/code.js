@@ -8,6 +8,6 @@ for (let file of files) {
 		let data = fs.readFileSync(file);
 		console.log(data.toString());
 	} catch(err) {
-		console.log("No such file or directory");
+		console.log(err.code, "No such file or directory");
 	}	
 }
